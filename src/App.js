@@ -1,23 +1,30 @@
-import logo from './logo.svg';
+import {useState} from 'react'
+import { updateFilterParams, filterComparator } from './data/dataFilter';
+import TableControls from './components/table-controls/TableControls';
+import CardList from './components/card-list/CardList';
+import data from './data/data.json'
 import './App.css';
 
 function App() {
+  
+  const [filterParams, setFilterParams] = useState([]); 
+  const [filteredData, setFilteredData] = useState(data);
+
+  const updateAppFilterParams = (filterParam) => {
+    console.log('filterParams', filterParams); 
+    console.log('filterParam', filterParam);
+    const updatedFilterParams = updateFilterParams(filterParams, filterParam); 
+
+    setFilterParams(updatedFilterParams);
+    console.log('updatedFilterParams', updatedFilterParams);
+    setFilteredData(data.filter(filterComparator(updatedFilterParams)));
+  }
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <header className="App-header"> </header>
+      <TableControls updateFilterParams={updateAppFilterParams} /> 
+      <CardList data={filteredData} /> 
     </div>
   );
 }

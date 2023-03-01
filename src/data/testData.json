@@ -1,0 +1,26 @@
+[
+    {
+      "Group": "Global Maternity Care",
+      "Code": "59400",
+      "Global": false,
+      "Description": "Routine obstetric care including antepartum care, vaginal delivery (with or without episiotomy, and/or forceps) and postpartum care"
+    },
+    {
+      "Group": "Global Maternity Care",
+      "Code": "59409",
+      "Global": false,
+      "Description": "Vaginal delivery only (with or without episiotomy and/or forceps);"
+    },
+    {
+      "Group": "Global Maternity Care",
+      "Code": "59610",
+      "Global": true,
+      "Description": "Routine obstetric care including antepartum care, vaginal delivery (with or without episiotomy, and/or forceps) and postpartum care, after previous cesarean delivery"
+    },
+    {
+      "Group": "Global Maternity Care",
+      "Code": "59612",
+      "Global": true,
+      "Description": "Vaginal delivery only, after previous cesarean delivery (with or without episiotomy and/or forceps);"
+    }
+]  
